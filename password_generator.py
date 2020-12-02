@@ -16,7 +16,7 @@ for up in upper:
     upper_chr.append(up)
 spec_char = ['!', '@', '#', '$', '%', '^', '&', '*']
 final = []
-#yo
+
 password_length = int(input("How many characters do you want in your password: "))
 num_len = int(input("How many (number) digits do you want in your password(If not want any number enter 0): "))
 if num_len != 0:

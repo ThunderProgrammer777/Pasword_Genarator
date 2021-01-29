@@ -18,10 +18,10 @@ class Dealer:
             elif fuel2 == "yes":
                 fuel = input("On which other fuel does this model run: ")
                 car.append(
-                    {"name": name, "brand": brand, "mileage": mileage, "fuel1": fuel1,'fuel2':fuel, "fuel_capacity": fuel_capacity,
+                    {"name": name, "brand": brand, "mileage": mileage, "fuel1": fuel1, 'fuel2': fuel,
+                     "fuel_capacity": fuel_capacity,
                      "seater": seater, "engine": engine, "price1": price1, "price2": price2, "stock": stock})
                 json.dump(car, file)
-
 
     @staticmethod
     def stock_of_car():
@@ -56,12 +56,14 @@ class Dealer:
                         f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
 
     @staticmethod
-    def allnum():
+    def allcar():
         with open('cars.txt', 'r') as file:
             cars = json.load(file)
             for car in cars:
                 stock = car['stock'].capitalize()
                 try:
-                    print(f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']} and {car['fuel2']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
+                    print(
+                        f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']} and {car['fuel2']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
                 except:
-                    print(f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
+                    print(
+                        f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")

@@ -60,9 +60,12 @@ class CustomFind:
                     pass
         for car in final:
             stock = car['stock'].capitalize()
-            try:
-                print(
-                    f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']} and {car['fuel2']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
-            except:
-                print(
-                    f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
+            if car['price1'] < self.price1 > car['price2']:
+                try:
+                    print(
+                        f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']} and {car['fuel2']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
+                except:
+                    print(
+                         f"{car['name']} of {car['brand']} brand. Has mileage of {car['mileage']}km/l. It can run on {car['fuel1']}.Has a fuel capacity of {car['fuel_capacity']}l.It have {car['seater']} seats. It have {car['engine']} engine. Price is from {car['price1']} l to {car['price2']} l. Stock:{stock}")
+        if len(final) == 0:
+            print("Sorry! We can't found car like your requirements [!]___[!] ")

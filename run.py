@@ -1,5 +1,6 @@
 from car_dealer_func import Dealer as ph
 from car_dealer_func import password as pas
+from customer_func import CustomFind as cs
 
 Choice1 = ("""l = list of all car model
 a = add number
@@ -56,7 +57,18 @@ elif person == 'customer':
             nn = input("Enter the name of the car model which you want to find: ")
             ph.find(nn)
         elif choice2 == 'c':
-            pass
+            print("If you don't want to give answer enter no:")
+            brand = str(input("Enter the brand name: "))
+            mileage = float(input("What is the mileage of car per litre in km: "))
+            fuel1 = str(input("Enter the type of fuel: "))
+            fuel_capacity = float(input("What is the fuel capacity: "))
+            seater = int(input("How many seater car model you want: "))
+            engine = input("Enter the name of the engine you want to present in the car: ")
+            price = float(input("Enter the maximum price you can afford in lakh: "))
+            fuel2 = str(input("Do you want another fuel in the car: "))
+
+            find = cs(brand,mileage,fuel1,fuel2,fuel_capacity,seater,engine,price)
+            find.find()
         elif choice2 != 'l' and choice2 != 'f' and choice2 != 'c' and choice2 != 'd':
             print("Sorry! No function found like that. [-]__[-]")
         choice2 = str(input(Choice2))
